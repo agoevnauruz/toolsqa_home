@@ -17,7 +17,7 @@ public class TestBase{
     }
 
     @Test
-    void qaApf() {
+    void qaapf() {
 
         open("/automation-practice-form");
 
