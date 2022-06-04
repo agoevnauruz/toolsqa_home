@@ -17,7 +17,7 @@ public class TestBase{
     }
 
     @Test
-    void QAapf() {
+    void qaApf() {
 
         open("/automation-practice-form");
 
@@ -35,11 +35,7 @@ public class TestBase{
         $("#userNumber").setValue("0123456789");
 
         $("#dateOfBirthInput").click();
-//        SelenideElement dateOfBirthInput = ($(".react-datepicker__month-select"));
-//        actions().moveToElement(dateOfBirthInput).click(dateOfBirthInput).perform();
-        $(".react-datepicker__month-select").click();
-        $(byText("May")).click();
-        $(".react-datepicker__year-select").click();
+
         $(byText("2000")).scrollIntoView(true).click();
         $(byText("1")).click();
 
@@ -50,7 +46,6 @@ public class TestBase{
         $(byText("Reading")).click();
         $(byText("Music")).click();
 
-//        $("#form-control-file").uploadFile(new File("img.jpg"));
         $("#uploadPicture").uploadFromClasspath("img.jpg");
 
         $("#currentAddress").setValue("Avenue 1");
