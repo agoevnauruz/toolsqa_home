@@ -37,6 +37,7 @@ public class TestBase{
         $("#dateOfBirthInput").click();
 
         $(byText("2000")).scrollIntoView(true).click();
+        $(byText("May")).click();
         $(byText("1")).click();
 
         $(".subjects-auto-complete__input").click();
