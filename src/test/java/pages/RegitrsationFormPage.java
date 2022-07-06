@@ -28,7 +28,7 @@ public class RegitrsationFormPage {
             return this;
     }
         public RegitrsationFormPage setUserEmail(String value) {
-            $("#userEmail").setValue("alex@egorov.com");
+            $("#userEmail").setValue(value);
             return this;
     }
         public RegitrsationFormPage setGender(String value) {
