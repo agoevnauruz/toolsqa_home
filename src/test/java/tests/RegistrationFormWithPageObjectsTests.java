@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static tests.TestData.*;
 
 
 public class RegistrationFormWithPageObjectsTests extends TestBase {
@@ -11,14 +12,12 @@ public class RegistrationFormWithPageObjectsTests extends TestBase {
 
     @Test
     void successfulTest() {
-        String firstName = "Neo";
-        String lastName = "Rus";
         regitrsationFormPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
-                .setUserEmail("alex@egorov.com")
+                .setUserEmail(userEmail)
                 .setGender("Other")
-                .setUserNumber("0123456789")
+                .setUserNumber(TestData.userNumber)
                 .setDateOfBirth("30", "May", "2000")
                 .setSubjectsInput("Maths")
                 .setHobbies("Sports")
@@ -28,8 +27,9 @@ public class RegistrationFormWithPageObjectsTests extends TestBase {
                 .setCity("Delhi")
                 .setSubmit()
                 .checkFormOpen("Thanks for submitting the form")
-                .checkResult("Student name", firstName + " " +  lastName)
-                .checkResult("Student email", "alex@egorov.com" )
+                .checkResult("Student name", firstName )
+                .checkResult("Student name", lastName)
+                .checkResult("Student email", userEmail )
                 .checkResult("Date of Birth", "30 May,2000");
     }
 }
