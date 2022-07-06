@@ -4,23 +4,22 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static tests.TestData.FIRST_NAME;
+import static tests.TestData.LAST_NAME;
 
 
-public class RegistrationFormTests extends TestBase {
+public class RegistrationFormWithDataTests extends TestBase {
+
 
 
     @Test
     void successfulTest() {
-        String firstName = "Neo";
-        String lastName = "Rus";
-
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
-
-        $("#firstName").setValue(firstName);
-        $("#lastName").setValue(lastName);
+        $("#firstName").setValue(FIRST_NAME);
+        $("#lastName").setValue(LAST_NAME);
         $("#userEmail").setValue("alex@egorov.com");
         $("#genterWrapper").$(byText("Other")).click();
         $("#userNumber").setValue("0123456789");
@@ -39,7 +38,7 @@ public class RegistrationFormTests extends TestBase {
         $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(firstName), text(lastName), text("alex@egorov.com"),
+        $(".table-responsive").shouldHave(text(FIRST_NAME), text(LAST_NAME), text("alex@egorov.com"),
                 text("30 May,2000"), text("Some street 1"));
     }
 }

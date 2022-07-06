@@ -1,7 +1,6 @@
 package tests;
 
-import Pages.RegitrsationFormPage;
-import Pages.components.CalendarComponent;
+import pages.RegitrsationFormPage;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
