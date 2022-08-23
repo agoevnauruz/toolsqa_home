@@ -32,7 +32,7 @@ public class RegitrsationFormPage {
             return this;
     }
         public RegitrsationFormPage setGender(String value) {
-        $("#genterWrapper").$(byText("Other")).click();
+        $("#genterWrapper").$(byText(value)).click();
             return this;
     }
     public RegitrsationFormPage setUserNumber(String value) {
@@ -45,30 +45,30 @@ public class RegitrsationFormPage {
             return this;
     }
     public RegitrsationFormPage setSubjectsInput(String value){
-        $("#subjectsInput").sendKeys("Maths");
+        $("#subjectsInput").sendKeys(value);
         $("#subjectsInput").pressEnter();
         return this;
     }
     public RegitrsationFormPage setHobbies(String value){
-       $(byText("Sports")).click();
+       $(byText(value)).click();
         return this;
     }
     public RegitrsationFormPage setUploadPicture (String value){
-        $("#uploadPicture").uploadFromClasspath("img/1.png");
+        $("#uploadPicture").uploadFromClasspath(value);
         return this;
     }
     public RegitrsationFormPage setCurrentAddress (String value){
-        $("#currentAddress").setValue("Some street 1");
+        $("#currentAddress").setValue(value);
         return this;
     }
     public RegitrsationFormPage setState (String value){
         $("#state").click();
-        $(byText("NCR")).click();
+        $(byText(value)).click();
         return this;
     }
     public RegitrsationFormPage setCity (String value){
         $("#city").click();
-        $(byText("Delhi")).click();
+        $(byText(value)).click();
         return this;
     }
     public RegitrsationFormPage setSubmit (){
