@@ -11,7 +11,6 @@ public class RegitrsationFormPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultsTableComponent resultsTableComponent = new ResultsTableComponent();
-
     public RegitrsationFormPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -32,7 +31,7 @@ public class RegitrsationFormPage {
             return this;
     }
         public RegitrsationFormPage setGender(String value) {
-        $("#genterWrapper").$(byText("Other")).click();
+        $("#genterWrapper").$(byText(value)).click();
             return this;
     }
     public RegitrsationFormPage setUserNumber(String value) {
@@ -45,30 +44,30 @@ public class RegitrsationFormPage {
             return this;
     }
     public RegitrsationFormPage setSubjectsInput(String value){
-        $("#subjectsInput").sendKeys("Maths");
+        $("#subjectsInput").sendKeys(value);
         $("#subjectsInput").pressEnter();
         return this;
     }
     public RegitrsationFormPage setHobbies(String value){
-       $(byText("Sports")).click();
+       $(byText(value)).click();
         return this;
     }
-    public RegitrsationFormPage setUploadPicture (String value){
+    public RegitrsationFormPage setUploadPicture (){
         $("#uploadPicture").uploadFromClasspath("img/1.png");
         return this;
     }
     public RegitrsationFormPage setCurrentAddress (String value){
-        $("#currentAddress").setValue("Some street 1");
+        $("#currentAddress").setValue(value);
         return this;
     }
     public RegitrsationFormPage setState (String value){
         $("#state").click();
-        $(byText("NCR")).click();
+        $(byText(value)).click();
         return this;
     }
     public RegitrsationFormPage setCity (String value){
         $("#city").click();
-        $(byText("Delhi")).click();
+        $(byText(value)).click();
         return this;
     }
     public RegitrsationFormPage setSubmit (){
@@ -76,7 +75,7 @@ public class RegitrsationFormPage {
         return this;
     }
     public RegitrsationFormPage checkFormOpen(String value){
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $("#example-modal-sizes-title-lg").shouldHave(text(value));
         return this;
     }
     public RegitrsationFormPage checkResult(String key, String value) {

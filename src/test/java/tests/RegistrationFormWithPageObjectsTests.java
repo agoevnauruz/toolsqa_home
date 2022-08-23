@@ -1,9 +1,6 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
 import static tests.TestData.*;
 
 
@@ -17,19 +14,26 @@ public class RegistrationFormWithPageObjectsTests extends TestBase {
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
                 .setGender("Other")
-                .setUserNumber(TestData.userNumber)
+                .setUserNumber(userNumber)
                 .setDateOfBirth("30", "May", "2000")
                 .setSubjectsInput("Maths")
                 .setHobbies("Sports")
-                .setUploadPicture("img/1.png")
-                .setCurrentAddress("Some street 1")
+                .setUploadPicture()
+                .setCurrentAddress(userAdress)
                 .setState("NCR")
                 .setCity("Delhi")
                 .setSubmit()
                 .checkFormOpen("Thanks for submitting the form")
-                .checkResult("Student name", firstName )
-                .checkResult("Student name", lastName)
-                .checkResult("Student email", userEmail )
-                .checkResult("Date of Birth", "30 May,2000");
+                .checkResult("Student Name", firstName + " " + lastName)
+                .checkResult("Student Email", userEmail)
+                .checkResult("Gender", "Other")
+                .checkResult("Mobile", userNumber)
+                .checkResult("Date of Birth", "30 May,2000")
+                .checkResult("Subjects", "Maths")
+                .checkResult("Hobbies", "Sports")
+                .checkResult("Picture", "1.png")
+                .checkResult("Address", userAdress)
+                .checkResult("State and City", "NCR" + " " + "Delhi");
+
     }
 }
