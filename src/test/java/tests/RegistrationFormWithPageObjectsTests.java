@@ -27,9 +27,9 @@ public class RegistrationFormWithPageObjectsTests extends TestBase {
                 .setCity("Delhi")
                 .setSubmit()
                 .checkFormOpen("Thanks for submitting the form")
-                .checkResult("Student name", firstName )
-                .checkResult("Student name", lastName)
-                .checkResult("Student email", userEmail )
+                .checkResult("Student Name", firstName )
+                .checkResult("Student Name", lastName)
+                .checkResult("Student Email", userEmail )
                 .checkResult("Date of Birth", "30 May,2000");
     }
 }
