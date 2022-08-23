@@ -11,7 +11,6 @@ public class RegitrsationFormPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultsTableComponent resultsTableComponent = new ResultsTableComponent();
-
     public RegitrsationFormPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -53,8 +52,8 @@ public class RegitrsationFormPage {
        $(byText(value)).click();
         return this;
     }
-    public RegitrsationFormPage setUploadPicture (String value){
-        $("#uploadPicture").uploadFromClasspath(value);
+    public RegitrsationFormPage setUploadPicture (){
+        $("#uploadPicture").uploadFromClasspath("img/1.png");
         return this;
     }
     public RegitrsationFormPage setCurrentAddress (String value){
@@ -76,7 +75,7 @@ public class RegitrsationFormPage {
         return this;
     }
     public RegitrsationFormPage checkFormOpen(String value){
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $("#example-modal-sizes-title-lg").shouldHave(text(value));
         return this;
     }
     public RegitrsationFormPage checkResult(String key, String value) {

@@ -3,7 +3,9 @@ package tests;
 import org.junit.jupiter.api.Test;
 import static tests.TestData.*;
 
+
 public class RegistrationFormWithPageObjectsTests extends TestBase {
+
 
     @Test
     void successfulTest() {
@@ -12,18 +14,17 @@ public class RegistrationFormWithPageObjectsTests extends TestBase {
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
                 .setGender("Other")
-                .setUserNumber(TestData.userNumber)
+                .setUserNumber(userNumber)
                 .setDateOfBirth("30", "May", "2000")
                 .setSubjectsInput("Maths")
                 .setHobbies("Sports")
-                .setUploadPicture("img/1.png")
-                .setCurrentAddress("Some street 1")
+                .setUploadPicture()
+                .setCurrentAddress(userAdress)
                 .setState("NCR")
                 .setCity("Delhi")
                 .setSubmit()
                 .checkFormOpen("Thanks for submitting the form")
-                .checkResult("Student Name", firstName)
-                .checkResult("Student Name", lastName)
+                .checkResult("Student Name", firstName + " " + lastName)
                 .checkResult("Student Email", userEmail)
                 .checkResult("Gender", "Other")
                 .checkResult("Mobile", userNumber)
@@ -31,7 +32,8 @@ public class RegistrationFormWithPageObjectsTests extends TestBase {
                 .checkResult("Subjects", "Maths")
                 .checkResult("Hobbies", "Sports")
                 .checkResult("Picture", "1.png")
-                .checkResult("Address", "Some street 1")
+                .checkResult("Address", userAdress)
                 .checkResult("State and City", "NCR" + " " + "Delhi");
+
     }
 }
