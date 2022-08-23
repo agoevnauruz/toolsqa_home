@@ -30,8 +30,8 @@ public class RegitrsationFormPage {
             $("#userEmail").setValue(value);
             return this;
     }
-        public RegitrsationFormPage setGender() {
-        $("#genterWrapper").$(byText("Other")).click();
+        public RegitrsationFormPage setGender(String value) {
+        $("#genterWrapper").$(byText(value)).click();
             return this;
     }
     public RegitrsationFormPage setUserNumber(String value) {
@@ -43,13 +43,13 @@ public class RegitrsationFormPage {
             calendarComponent.setDate(day, month, year);
             return this;
     }
-    public RegitrsationFormPage setSubjectsInput(){
-        $("#subjectsInput").sendKeys("Maths");
+    public RegitrsationFormPage setSubjectsInput(String value){
+        $("#subjectsInput").sendKeys(value);
         $("#subjectsInput").pressEnter();
         return this;
     }
-    public RegitrsationFormPage setHobbies(){
-       $(byText("Sports")).click();
+    public RegitrsationFormPage setHobbies(String value){
+       $(byText(value)).click();
         return this;
     }
     public RegitrsationFormPage setUploadPicture (){
@@ -60,14 +60,14 @@ public class RegitrsationFormPage {
         $("#currentAddress").setValue(value);
         return this;
     }
-    public RegitrsationFormPage setState (){
+    public RegitrsationFormPage setState (String value){
         $("#state").click();
-        $(byText("NCR")).click();
+        $(byText(value)).click();
         return this;
     }
-    public RegitrsationFormPage setCity (){
+    public RegitrsationFormPage setCity (String value){
         $("#city").click();
-        $(byText("Delhi")).click();
+        $(byText(value)).click();
         return this;
     }
     public RegitrsationFormPage setSubmit (){
