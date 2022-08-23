@@ -23,7 +23,7 @@ public class RegistrationFormWithPageObjectsTests extends TestBase {
                 .setState("NCR")
                 .setCity("Delhi")
                 .setSubmit()
-                .checkFormOpen()
+                .checkFormOpen("Thanks for submitting the form")
                 .checkResult("Student Name", firstName + " " + lastName)
                 .checkResult("Student Email", userEmail)
                 .checkResult("Gender", "Other")

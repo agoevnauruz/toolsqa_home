@@ -74,8 +74,8 @@ public class RegitrsationFormPage {
         $("#submit").click();
         return this;
     }
-    public RegitrsationFormPage checkFormOpen(){
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+    public RegitrsationFormPage checkFormOpen(String value){
+        $("#example-modal-sizes-title-lg").shouldHave(text(value));
         return this;
     }
     public RegitrsationFormPage checkResult(String key, String value) {
